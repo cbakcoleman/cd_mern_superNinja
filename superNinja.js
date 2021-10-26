@@ -23,19 +23,26 @@ class Ninja {
 
 // CHECK TO SEE IF THIS IS CORRECT...
 class Sensei extends Ninja {
-    constructor(name, health) {
+    constructor(name, health, wisdom = 10) {
         super(name, health);
-        this.wisdom = 10;
+        this.wisdom = wisdom;
     }
 
     speakWisdom() {
         this.drinkSoju();
         console.log("A snake cannot wear a vest, for it has no arms.")
+        return this;
     }
+
+    showStats() {
+        console.log("Name: " + this.name, ", Strength: " + this.strength, ", Speed: " + this.speed, ", Health: " + this.health, ", Wisdom: " + this.wisdom);
+        return this;
+    }
+
 }
 
 const superSensei = new Sensei("Zatch", 100);
 
 superSensei.showStats();
-superSensei.speakWisdom();
+superSensei.speakWisdom().speakWisdom().speakWisdom();
 superSensei.showStats();
