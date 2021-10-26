@@ -1,4 +1,5 @@
 class Ninja {
+    // DO I NEED 'SPEED' 'STRENGTH' on the line below??
     constructor(name, health, speed, strength) {
         this.name = name;
         this.health = health;
@@ -19,3 +20,22 @@ class Ninja {
         console.log("Drinking some Soju...")
     }
 }
+
+// CHECK TO SEE IF THIS IS CORRECT...
+class Sensei extends Ninja {
+    constructor(name, health) {
+        super(name, health);
+        this.wisdom = 10;
+    }
+
+    speakWisdom() {
+        this.drinkSoju();
+        console.log("A snake cannot wear a vest, for it has no arms.")
+    }
+}
+
+const superSensei = new Sensei("Zatch", 100);
+
+superSensei.showStats();
+superSensei.speakWisdom();
+superSensei.showStats();
